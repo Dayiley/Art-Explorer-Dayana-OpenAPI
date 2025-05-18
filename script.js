@@ -69,17 +69,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   const images = [
-    'url("images/default.jpg")',
-    'url("Images/default (1).jpg")',
-    'url("Images/default (2).jpg")',
-    'url("Images/default (3).jpg")'
+    'images/default.jpg',
+    'images/default (1).jpg',
+    'images/default (2).jpg',
+    'images/default (3).jpg'
   ];
   
   let index = 0;
   const background = document.getElementById("body");
   
   function changeBackground() {
-    background.style.backgroundImage = images[index];
+    background.style.backgroundImage = `url("${images[index]}")`;
     index = (index + 1) % images.length; // Vuelve al principio cuando llega al final
   }
   
