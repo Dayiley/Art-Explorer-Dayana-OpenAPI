@@ -63,3 +63,25 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
+
+
+
+
+
+  const images = [
+    'url("images/default.jpg")',
+    'url("Images/default (1).jpg")',
+    'url("Images/default (2).jpg")',
+    'url("Images/default (3).jpg")'
+  ];
+  
+  let index = 0;
+  const background = document.getElementById("body");
+  
+  function changeBackground() {
+    background.style.backgroundImage = images[index];
+    index = (index + 1) % images.length; // Vuelve al principio cuando llega al final
+  }
+  
+  changeBackground(); // Mostrar la primera imagen de inmediato
+  setInterval(changeBackground, 4000); // Cambia cada 4 segundos
