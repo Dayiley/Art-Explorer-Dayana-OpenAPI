@@ -49,17 +49,21 @@ const birthYearForm = document.getElementById("birthYearForm");
         const gallery = document.getElementById("artGallery");
         gallery.innerHTML = "<p>Loading...</p>";
 
+        const limit = 20;
+
         try {
-          let res = await fetch(`https://api.artic.edu/api/v1/artworks/search?query[term][date_end]=${year}&fields=id,title,image_id,artist_display,date_display,medium_display&limit=10`);         
+          let res = await fetch(`https://api.artic.edu/api/v1/artworks/search?query[term][date_end]=${year}&fields=id,title,image_id,artist_display,date_display,medium_display&limit=${limit}`);             
           let data = await res.json();
           let artworks = data.data;
 
           if (artworks.length === 0) {
-            res = await fetch(`https://api.artic.edu/api/v1/artworks/search?query[term][date_start]=${year}&fields=id,title,image_id,artist_display,date_display,medium_display&limit=10`);
+            res = await fetch(`https://api.artic.edu/api/v1/artworks/search?query[term][date_start]=${year}&fields=id,title,image_id,artist_display,date_display,medium_display`);
             data = await res.json();
             artworks = data.data;
           }
+
           
+          console.log(artworks.length);
           console.log(res);
           
           
