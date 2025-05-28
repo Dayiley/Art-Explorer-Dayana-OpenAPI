@@ -19,7 +19,7 @@ body{
 
 .site-name{
   color: #022f4d9e  ;
-  font-size: 4rem;
+  font-size: 2.5rem;
   text-shadow: 10px 6px 15px#ffdb9892;
 }
 
@@ -41,7 +41,7 @@ body{
 
 #typing-intro {
     font-family: 'Courier New', monospace;
-    font-size: 1.2rem;
+    font-size: 1rem;
     white-space: pre-wrap;
     border-left: 3px solid #fff5dc;
     padding-left: 1rem;
@@ -49,7 +49,8 @@ body{
     margin: 2rem auto;
     color: #fff5dc;
     text-align: start;
-    font-weight: 500;
+    font-weight: 400;
+    text-shadow: 5px 3px 3px #3c3b3b;
   }
 
   .page-name{
@@ -128,9 +129,7 @@ body{
      text-decoration: none;
    }
   
-  
-   
-   .home {
+   .home /*btn*/   {
     text-decoration: none;
     margin: 0 auto;
     max-width: 500px;
