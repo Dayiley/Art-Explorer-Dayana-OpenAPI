@@ -5,34 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Art Explorer</title>
   <link href="css/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
     
 
-<nav class="nav">
-    <div class="nav-elem-container">
-      <h1 class="page-name">Inspiration Generator</h1>
+<nav class="nav">   
+      <h2 class="">Get Inspiration</h2>
       <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="birth-year.html">Birth Year Art</a>
+        <a href="index.html" ><i class="fa-solid fa-house"></i></a>
+        <a href="birth-year.html" >BirthYear Artwork</a>
       </div>
-    </div>
   </nav>
 
- 
-    <h2 class="">Get Inspired by Art</h2>
-    <div class="">
+ <div class="content">
+    <h1 class="page-name">Get Inspired by Art</h1>
+    
       <label class="" for="mediumFilter">Choose a Medium:</label>
       <select id="mediumFilter" class="select">      
         <option value="">All</option>
         <option value="Oil on canvas">Oil on canvas</option>
         <option value="Watercolor">Watercolor</option>
       </select>
-    </div>
-    <button id="generateInspiration" class="">Inspire Me</button>
-    <div id="inspirationResult" class=""></div>
   
+    <button id="generateInspiration" class="btn-grad">Inspire Me</button>
+    <div id="inspirationResult" class=""></div>
+  </div>
 
   <script src="js/script.js"></script>
 </body>
+</html>

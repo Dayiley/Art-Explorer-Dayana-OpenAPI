@@ -41,12 +41,12 @@ I hope you enjoy exploring the art as much as I enjoyed building this site!`
 
   //year finished artwork fetch
 
-const birthYearForm = document.getElementById("birthYearForm");
+const birthYearForm = document.getElementById("birth-year-form");
     if (birthYearForm) {
       birthYearForm.addEventListener("submit", async function (e) {
         e.preventDefault();
-        const year = document.getElementById("birthYear").value;
-        const gallery = document.getElementById("artGallery");
+        const year = document.getElementById("birth-year").value;
+        const gallery = document.getElementById("art-gallery");
         gallery.innerHTML = "<p>Loading...</p>";
 
         const limit = 20;
@@ -105,7 +105,9 @@ const birthYearForm = document.getElementById("birthYearForm");
           const random = artworks[Math.floor(Math.random() * artworks.length)];
           result.innerHTML = `
             <div >
+            <div class="art-frame">
               <img src="https://www.artic.edu/iiif/2/${random.image_id}/full/300,/0/default.jpg" alt="${random.title}" style="max-width:100%;border-radius:8px;">
+            </div>
               <h3>${random.title}</h3>
             </div>`;
         } catch (err) {
