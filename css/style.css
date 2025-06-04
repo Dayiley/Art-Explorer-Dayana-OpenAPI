@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 html{
   margin: 0;
 }
 body{
   margin: 0;
-  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family:"Source Sans 3";
   background-color:hsla(51, 100%, 95%, 0.277);
 }
 
@@ -20,7 +20,7 @@ body{
 .site-name{
   color: #022f4d9e  ;
   font-size: 2.5rem;
-  text-shadow: 10px 6px 15px#ffdb9892;
+  text-shadow: 10px 6px 15px#ffffff92;
 }
 
 #home-sign{
@@ -43,39 +43,67 @@ body{
     font-family: 'Courier New', monospace;
     font-size: 1rem;
     white-space: pre-wrap;
-    border-left: 3px solid #fff5dc;
+    border-left: 3px solid #ffffff6d;
     padding-left: 1rem;
     max-width: 600px;
     margin: 2rem auto;
-    color: #fff5dc;
+    color: #ffffffa2;
     text-align: start;
     font-weight: 400;
     text-shadow: 5px 3px 3px #3c3b3b;
   }
 
+  .content{
+    display: flex; 
+    flex-direction: column; 
+    max-width: 700px;
+    padding: 0 8%;
+    margin: 0 auto;
+    align-items: center;
+  }
   .page-name{
-    color: rgba(9, 9, 121, 1);
+    color: #19547b;
     margin-top: 100px;
+    text-align: center;
+  }
+
+  .page-intro{
+    text-align: center;
+    margin: 2%;
+  
+  }
+
+  .intro-description{
+    margin: 5px 2% 20px 2%;
+    text-align: justify;
   }
 
   .nav{  
-    background-image: linear-gradient(to right, #ffd89b 0%, #19547b  70%);
+    background-image: linear-gradient(to right, #ffffff 0%, #19547b  70%);
     color: #022f4db8;
     width: 100%;
     margin-top: 0;
     display: flex;
     justify-content: space-between;
     position: fixed;
+    height: 50px;
+    box-shadow: 0 10px 20px #5c5c5c86; 
+  }
+
+  .nav-name {
+    font-size: 1.2rem;
+    margin-left: 10px;
   }
 
   .nav-links{
     display: flex;
     align-items: center;
+    line-height: 1;
   }
 
   .nav-links a { 
     text-decoration: none;
-    color: #ffd99b97;
+    color: #ffffff97;
     margin: 0 20px;
     max-width: min-content;
     font-size: 1.3rem;
@@ -85,21 +113,62 @@ body{
     font-size: 1.8rem;
   }
 
-  #art-gallery{
-    display: grid;
-    grid-template-columns: 1fr;   
-  }
-
-  .content{
+  #input-cont{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    min-width: 300px;
+  }
+
+  input, select{
+    margin-bottom: 20px;
+    color: #19547b ;
+    border:0.7px solid #19547b;
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 5px 10px 15px #5c5c5c5a;
+  }
+  #art-gallery{
+    display: grid;
+    grid-template-columns: 1fr; 
+    margin: 0 10%;  
+    gap:15px;
   }
 
   .card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px 5px;
+    padding: 0px;
+    margin: 20px 5px;
+    
+  }
+  
+  .img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   
+    
+  }
+  .by-img{
+    margin: auto;
+    width: 100%;
+    object-fit: cover;
+    max-height: 250px;
+  }
+
+  .description-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 5px;
+    text-align: center;
+    line-height: 1rem;
   }
   
   #birth-year-form{
@@ -107,15 +176,29 @@ body{
     flex-direction: column;
   }
 
+  .art-frame {
+    margin: 0 20px;        
+    height: auto;         
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    justify-content: center;     
+  }
+  
+  .art-frame img {
+    min-width: 80vw;
+    margin: 20px 5%;
+  }
+
   .btn-grad {
-    background-image: linear-gradient(to right, #ffd89b 0%, #19547b  51%, #ffd89b  100%);
+    background-image: linear-gradient(to right, #19547b 0%, #ffffff  51%, #19547b  100%);
      margin: 10px;
      padding: 15px 45px;
      text-align: center;
      text-transform: uppercase;
      transition: 0.5s;
      background-size: 200% auto;
-     color: white;            
+     color: rgb(8, 46, 81);            
      box-shadow: 0 10px 20px #5c5c5c86;
      border-radius: 10px;
      border: none;
@@ -124,7 +207,7 @@ body{
 
    .btn-grad:hover {
      background-position: right center; 
-     color: #dbe2ff;
+     color: aliceblue;
      font-weight: 600;
      text-decoration: none;
    }
@@ -139,4 +222,25 @@ body{
   }
    
    
-  
+  @media (min-width: 480px) { 
+    #art-gallery{
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      
+    }
+
+  }
+  @media (max-width: 480px) { 
+    
+    .art-frame  {
+      max-width: 100%;
+    }
+    
+    .art-frame img {
+      width: 100%;         
+      max-width: 400px;   
+      height: auto;       
+      display: block;    
+      margin: 0 auto;  
+    }
+
+  }

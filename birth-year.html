@@ -11,7 +11,7 @@
 
 
   <nav class="nav">   
-      <h2 class="">BirthYear Artwork</h2>
+      <h2 class="nav-name">BirthYear Artwork</h2>
       <div class="nav-links">
         <a href="index.html" ><i class="fa-solid fa-house"></i></a>
         <a href="inspiration.html" >Inspiration Generator</a>
@@ -20,14 +20,28 @@
 
  <div class="content">
     <h1 class="page-name">Explore Art from Your Birth Year</h1>
+    <h2 class="page-intro">
+      Have you ever wondered how art has evolved over the years? How historical events may have influenced the artworks created in a specific year? What about the year you were born?
+    </h2>
+    <p class="intro-description">
+      This tool invites you to explore pieces completed in the year of your birth—and if you have a curious spirit and a critical mind, you might even start to notice patterns or uncover the stories behind the art of that time. Whether you're exploring your birth year or any other moment in history, this is your first step into discovering how art reflects the world around it.
+    </p>
 
     <form id="birth-year-form" class="">
-      <label for="birth-year" class="">Enter year:</label>
-      <input type="number" id="birth-year" class="" required />
+      <div id="input-cont">
+        <label for="birth-year" class="">Enter year:</label> 
+        <input type="number" id="birth-year" class="" required />
+        <label for="artwork-limit" class="">Gallery Size:</label>
+        <input type="number" id="artwork-limit" placeholder="1-100" required>
+      </div>
       <button type="submit" class="btn-grad">Search</button>
+
     </form>
-    <div id="art-gallery" class=""></div>
 </div>
+    
+    
+<div id="art-gallery" class=""></div>
+
   
   <script src="js/script.js"></script>
 </body>

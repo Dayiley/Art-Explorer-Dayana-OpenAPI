@@ -47,9 +47,8 @@ const birthYearForm = document.getElementById("birth-year-form");
         e.preventDefault();
         const year = document.getElementById("birth-year").value;
         const gallery = document.getElementById("art-gallery");
+        const limit = document.getElementById("artwork-limit").value;
         gallery.innerHTML = "<p>Loading...</p>";
-
-        const limit = 20;
 
         try {
           let res = await fetch(`https://api.artic.edu/api/v1/artworks/search?query[term][date_end]=${year}&fields=id,title,image_id,artist_display,date_display,medium_display&limit=${limit}`);             
@@ -66,15 +65,32 @@ const birthYearForm = document.getElementById("birth-year-form");
           console.log(artworks.length);
           console.log(res);
           
+          const bannedKeywords = ["nude", "nudity", "naked", "desnudo", "desnuda", "torso", "erotic", "sensual", "sally","tamarra","lyon","genevieve","letinsky","goldin"];
+
+          function containsBannedWord(text) {
+            return bannedKeywords.some(word => text.toLowerCase().includes(word));
+          }
+
+          artworks = artworks.filter(art => {
+            const combinedText = `
+              ${art.title || ""} 
+              ${art.artist_display || ""} 
+              ${art.medium_display || ""}`.toLowerCase();
+            return !containsBannedWord(combinedText);
+          });
           
           
           gallery.innerHTML = artworks.length
             ? artworks.map(art => `
                 <div class="card">
-                  <img src="https://www.artic.edu/iiif/2/${art.image_id}/full/300,/0/default.jpg" alt="${art.title}" style="width:100%;max-height:200px;object-fit:cover;">
-                  <h3>${art.title}</h3>
-                  <p>${art.artist_display}</p>
-                  <p>${art.date_display} - ${art.medium_display}</p>
+                  <div class="img-container">
+                    <img src="https://www.artic.edu/iiif/2/${art.image_id}/full/300,/0/default.jpg" alt="${art.title}"  class="by-img" >
+                  </div> 
+                  <div class ="description-container">
+                    <h3>${art.title}</h3>
+                    <p>${art.artist_display}</p>
+                    <p>${art.date_display} - ${art.medium_display}</p>
+                  </div>
                 </div>
               `).join("")
             : "<p>No artworks found for this year.</p>";
@@ -104,10 +120,8 @@ const birthYearForm = document.getElementById("birth-year-form");
           }
           const random = artworks[Math.floor(Math.random() * artworks.length)];
           result.innerHTML = `
-            <div >
             <div class="art-frame">
-              <img src="https://www.artic.edu/iiif/2/${random.image_id}/full/300,/0/default.jpg" alt="${random.title}" style="max-width:100%;border-radius:8px;">
-            </div>
+              <img src="https://www.artic.edu/iiif/2/${random.image_id}/full/600,/0/default.jpg" alt="${random.title}" >
               <h3>${random.title}</h3>
             </div>`;
         } catch (err) {
