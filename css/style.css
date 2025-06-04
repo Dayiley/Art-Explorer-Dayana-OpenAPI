@@ -130,7 +130,7 @@ body{
   }
   #art-gallery{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     margin: 0 10%;  
     gap:15px;
   }
@@ -241,6 +241,12 @@ body{
     a i{
       font-size: 1.2rem;
      
+    }
+
+    #art-gallery{
+
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      margin: 0 10%;  
     }
     
     .art-frame  {
